@@ -1,0 +1,222 @@
+/* 
+WebMap-Injector for ArcGIS API for Javascript 3.3
+Written by Frank Garofalo and Brenda Ibold in January 2013.
+webmap-injector by Frank Garofalo and Brenda Ibold
+is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. 
+Please attribute the authors if you use it. */
+
+
+/* --------------------------------------------------- LAYOUT STYLES --------------------------------------------------- */
+
+  body {
+		color:#333;
+		font-size:14px;
+		font-family: Verdana, Geneva, Arial, sans-serif;
+		background-position:top center;
+		background-repeat:no-repeat;
+	}
+	
+	h1,
+	h2 {
+		margin: 10px 0 10px 0;
+		padding: 0;
+		font-weight:normal;
+		line-height: normal;
+		color: #007AC2;
+	}
+	h1 { font-size: 26px;}
+	h2 { font-size: 20px; }
+	
+	.display_hidden { display:none !important; }
+	
+	.margin_top_20 { margin-top:20px; }
+	
+	
+/* --------------------------------------------------- MEDIA QUERIES --------------------------------------------------- */
+	
+	@media all and (max-width: 768px) and (orientation: portrait) {
+		body {background-color:#000 !important;}
+		/* the default screen resolution for the iPad */
+		.ui_handheld { display:inline-block; }
+		.ui_handheld_hide { display:none !important; }
+		
+		body {
+			background-color:#fff;
+			background-image:none;
+			/*background-image:url("images/arcgis_background.jpg");*/
+		}
+		
+		/* SCREEN SIZE - TEXT LABEL */
+		.screen_label.screen_desktop {display:none;}
+		.screen_label.screen_tablet_landscape {display:none;}
+		.screen_label.screen_tablet_portrait {display:block;}
+		.screen_label.screen_phone_landscape {display:none;}
+		.screen_label.screen_phone_portrait {display:none;}
+		
+		/* MAP SIZE */
+		#mapDiv {
+			max-width:768px !important;
+			height: 400px !important;
+		}
+	}
+	
+	@media all and (min-width: 321px) and (max-width: 768px) and (orientation: landscape) {
+		/* the default screen resolution for the DROID2 */
+		body {background-color:#0FF !important;}
+		.ui_handheld { display:inline-block; }
+		.ui_handheld_hide { display:none !important; }
+		
+		html {
+			margin:0 !important;
+			padding:0 !important;
+		}
+		body {
+			margin:0 !important;
+			padding:0 !important;
+		}
+		
+		/* SCREEN SIZE - TEXT LABEL */
+		.screen_label.screen_desktop {display:none;}
+		.screen_label.screen_tablet_landscape {display:none;}
+		.screen_label.screen_tablet_portrait {display:none;}
+		.screen_label.screen_phone_landscape {display:block;}
+		.screen_label.screen_phone_portrait {display:none;}
+		
+		/* MAP SIZE */
+		#mapDiv {
+			max-width:768px !important;
+			height: 400px !important;
+		}
+		
+	}
+		
+	@media all and (min-width: 480px) and (max-width: 768px) and (orientation: landscape) {
+		body {background-color:#F00 !important;}
+		/* the default screen resolution for the iPad */
+		.ui_handheld { display:inline-block; }
+		.ui_handheld_hide { display:none !important; }
+		
+		html {
+			margin:0 !important;
+			padding:0 !important;
+		}
+		body {
+			margin:0 !important;
+			padding:0 !important;
+		}
+		
+		/* SCREEN SIZE - TEXT LABEL */
+		.screen_label.screen_desktop {display:none;}
+		.screen_label.screen_tablet_landscape {display:block;}
+		.screen_label.screen_tablet_portrait {display:none;}
+		.screen_label.screen_phone_landscape {display:none;}
+		.screen_label.screen_phone_portrait {display:none;}
+		
+		/* MAP SIZE */
+		#mapDiv {
+			max-width:768px !important;
+			height: 400px !important;
+		}
+		
+	}
+	
+	@media all and (min-width: 321px) and (max-width: 480px) {
+		body {background-color:#00F !important;}
+		/* Smartphone - Landscape */
+		.ui_handheld { display:inline-block; }
+		.ui_handheld_hide { display:none !important; }
+		
+		
+		/* SCREEN SIZE - TEXT LABEL */
+		.screen_label.screen_desktop {display:none;}
+		.screen_label.screen_tablet_landscape {display:none;}
+		.screen_label.screen_tablet_portrait {display:none;}
+		.screen_label.screen_phone_landscape {display:block;}
+		.screen_label.screen_phone_portrait {display:none;}
+		
+		/* MAP SIZE */
+		#mapDiv {
+			max-width:480px !important;
+			height: 321px !important;
+		}
+		
+	}
+	
+	@media all and (max-width: 320px) {
+		/* Smartphone - Portrait */
+		body {background-color:#0F0 !important;}
+		.ui_handheld { display:inline-block; }
+		.ui_handheld_hide { display:none !important; }
+		
+		html {
+			margin:0 !important;
+			padding:0 !important;
+		}
+		body {
+			background-color:#fff;
+			background-image:none;
+			margin:0 !important;
+			padding:0 !important;
+		}	
+		
+		
+		/* SCREEN SIZE - TEXT LABEL */
+		.screen_label.screen_desktop {display:none;}
+		.screen_label.screen_tablet_landscape {display:none;}
+		.screen_label.screen_tablet_portrait {display:none;}
+		.screen_label.screen_phone_landscape {display:none;}
+		.screen_label.screen_phone_portrait {display:block;}
+		
+		/* MAP SIZE */
+		#mapDiv {
+			max-width:320px !important;
+			height: 400px !important;
+		}
+        
+	}
+	
+	
+	@media all and (min-width: 780px) and (max-width: 980px) {
+		body { /*background-color:#0FF !important;*/ }
+		/* the resolution to be used for all devices with a screen resolution larger than an iPad */
+		.ui_handheld_hide { display:none !important; }
+		
+		.container_16 {
+			max-width:960px !important;
+			margin-left:auto !important;
+			margin-right:auto !important;
+		}
+		
+		/* SCREEN SIZE - TEXT LABEL */
+		.screen_label.screen_desktop {display:block;}
+		.screen_label.screen_tablet_landscape {display:none;}
+		.screen_label.screen_tablet_portrait {display:none;}
+		.screen_label.screen_phone_landscape {display:none;}
+		.screen_label.screen_phone_portrait {display:none;}
+		
+		/* MAP SIZE */
+		#mapDiv {
+			width: 800px !important;
+			height: 600px !important;
+		}
+		
+	}
+	@media all and (min-width: 981px) {
+		/* the resolution to be used for all devices with a screen resolution larger than an iPad */
+		.ui_handheld { display:none !important; }
+		.ui_handheld_hide { }
+		
+		/* SCREEN SIZE - TEXT LABEL */
+		.screen_label.screen_desktop {display:block;}
+		.screen_label.screen_tablet_landscape {display:none;}
+		.screen_label.screen_tablet_portrait {display:none;}
+		.screen_label.screen_phone_landscape {display:none;}
+		.screen_label.screen_phone_portrait {display:none;}
+		
+		/* MAP SIZE */
+		#mapDiv {
+			width: 980px !important;
+			height: 768px !important;
+		}
+		
+	}
