@@ -7,26 +7,12 @@ Please attribute the authors if you use it. */
 
 dojo.require("esri.map");
 dojo.require("dijit.dijit");
-//dojo.require("dijit.layout.BorderContainer");
-//dojo.require("dijit.layout.ContentPane");
-//dojo.require("dijit.layout.AccordionContainer");
-//dojo.require("dijit.form.CheckBox");
-//dojo.require("dijit.TitlePane");
 dojo.require("dojo.parser");
-//dojo.require("esri.dijit.Popup");
-//dojo.require("esri.dijit.Legend");
-//dojo.require("esri.dijit.Scalebar");
-//dojo.require("esri.toolbars.draw");
-//dojo.require("esri.dijit.BasemapGallery");
 dojo.require("esri.arcgis.utils");
-//dojo.require("esri.layers.KMLLayer");
 dojo.require("esri.tasks.identify");
 dojo.require("esri.layers.agsdynamic");
 dojo.require("esri.layers.FeatureLayer");
-//dojo.require("dijit.TooltipDialog");
-//dojo.require("esri.dijit.Popup");
 dojo.require("esri.symbol");
-//dojo.require("esri.tasks.PrintTask");
 dojo.require("esri.arcgis.utils");
 // Dojo AJAX
 dojo.require("dojo._base.xhr");
